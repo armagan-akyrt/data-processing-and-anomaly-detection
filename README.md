@@ -23,8 +23,8 @@ Preprocessed data analysis:
 
 ## IMPORTANT NOTE:
 A `.env` file is required to run the project. It should contain the following variables:
-* `INFLUXDB_HOST`: Hostname of the influxdb server.
-* `INFLUXDB_PORT`: Port of the influxdb server.
-* `INFLUXDB_USER`: Username of the influxdb server.
-* `INFLUXDB_PASSWORD`: Password of the influxdb server.
+* `HOST_CLIENT`: Hostname of the influxdb server.
+* `DB_CLIENT`: Database name of the influxdb server.
+* `UNAME_CLIENT`: Username of the influxdb server.
+* `PWD_CLIENT`: Password of the influxdb server.
 For security reasons, this file is not included in the repository. Please create one in the root directory of the project.
