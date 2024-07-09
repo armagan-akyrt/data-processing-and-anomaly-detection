@@ -7,6 +7,7 @@ import pytz
 
 
 def generate_plot(df):
+    '''Generates line plot for processed data'''
 
     sns.set_theme(style='whitegrid')
     fig, ax = plt.subplots(figsize=(15, 5))

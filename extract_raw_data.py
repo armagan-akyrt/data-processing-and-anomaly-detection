@@ -3,13 +3,14 @@ import sys
 from dotenv import load_dotenv
 import os
 from influxdb import InfluxDBClient
-import datetime
 import pytz
 
+# default values
 QUERY_TIME_FACTOR = '24h'
 OUTPUT_FILE_NAME = 'raw_data.csv'
 
 def read_queries(query, client):
+    '''Reads query from InfluxDB and returns a DataFrame'''
     df = client.query(query)
     return df
 
@@ -20,12 +21,13 @@ def main():
         print('No arguments for query length provided. Assuming default value of 24h.\n'
               'Output file name: raw_data.csv')
     else:
-        print(f'Query length provided: {sys.argv[1]}')
+        print(f'Query timeframe provided: {sys.argv[1]}\n'
+              f'Output file name: {sys.argv[2]}')
         QUERY_TIME_FACTOR = sys.argv[1]
         OUTPUT_FILE_NAME = sys.argv[2]
 
 
-
+    # Load environment variables
     load_dotenv()
 
     pwd_client = os.getenv('PWD_CLIENT')

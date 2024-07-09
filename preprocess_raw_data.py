@@ -30,9 +30,11 @@ def main():
     weight_value = None
     start_time = None
     for i in range(1, len(df)):
+
         if df['ADW1_BR1_Tartim_Yapiliyor'][i] == 500 and df['ADW1_BR1_Tartim_Yapiliyor'][i - 1] == 0:
             start_time = df['time'][i]
             is_weighed = True
+
         if df['ADW1_BR1_Tartim_Yapiliyor'][i] == 0 and df['ADW1_BR1_Tartim_Yapiliyor'][i - 1] == 500:
             weight_value = df['ADW1_BR1_Loadcell_Aktuel_Deger'][i]
 
@@ -58,7 +60,7 @@ def main():
     print(len(processed_data['bosaltma_maks_degeri']))
     processed_df = pd.DataFrame(processed_data)
 
-    # convert time to datetime
+    # convert time to datetime to remedy UTF-UTF+3 encoding error
     processed_df['tartima_baslama_zamani'] = pd.to_datetime(processed_df['tartima_baslama_zamani'])
 
     processed_df.to_csv(OUTPUT_FILE, index=False)

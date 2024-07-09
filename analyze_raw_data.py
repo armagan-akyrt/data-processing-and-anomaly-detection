@@ -4,6 +4,8 @@ import seaborn as sns
 
 
 def generate_plot(df):
+    '''Generates line plot for raw data'''
+
     sns.set_theme(style='whitegrid')
     fig, ax = plt.subplots(figsize=(15, 5))
     sns.lineplot(data=df, x='time', y='ADW1_BR1_Loadcell_Aktuel_Deger', ax=ax, label='ADW1_BR1_Loadcell_Aktuel_Deger')
