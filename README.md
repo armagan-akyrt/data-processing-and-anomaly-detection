@@ -21,3 +21,10 @@ Preprocessed data analysis:
   ![](images/preprocessed_data.png)
 <div align="center">Figure 2. Processed data visualization of past 7 days.</div>
 
+## IMPORTANT NOTE:
+A `.env` file is required to run the project. It should contain the following variables:
+* `INFLUXDB_HOST`: Hostname of the influxdb server.
+* `INFLUXDB_PORT`: Port of the influxdb server.
+* `INFLUXDB_USER`: Username of the influxdb server.
+* `INFLUXDB_PASSWORD`: Password of the influxdb server.
+For security reasons, this file is not included in the repository. Please create one in the root directory of the project.
